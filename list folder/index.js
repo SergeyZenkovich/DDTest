@@ -2,6 +2,7 @@ var btn = document.querySelector('.add');
 var remove = document.querySelector('.draggable');
 
 function dragStart(e) {
+  dragged = e.target;
   this.style.opacity = '0.4';
   dragSrcEl = this;
   e.dataTransfer.effectAllowed = 'move';
@@ -24,10 +25,10 @@ function dragOver(e) {
 }
 
 function dragDrop(e) {
-  if (dragSrcEl != this) {
-    dragSrcEl.innerHTML = this.innerHTML;
+    // dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = e.dataTransfer.getData('text/html');
-  }
+    dragged.parentNode.removeChild( dragged );
+    e.target.appendChild( dragged );
   return false;
 }
 
@@ -59,7 +60,7 @@ function addNewItem() {
     document.querySelector('.input').value = '';
     var li = document.createElement('li');
     var attr = document.createAttribute('draggable');
-    var ul = document.querySelector('ul');
+    var ul = document.querySelector('.ul1');
     li.className = 'draggable';
     attr.value = 'true';
     li.setAttributeNode(attr);

@@ -44,13 +44,28 @@ span {
     will-change: transform;
   }
 
-  ul {
-    padding: 0px;
-  }
   .ul-block{
+    margin-top: 20px;
+    height: 600px;
     display: flex;
     justify-content: space-around;
+    background-color: cornsilk;
   }
+  ul {
+    position: relative;
+    padding: 0px;
+    width: 300px;
+    font-family:  'Raleway',
+    sans-serif;
+    font-weight: 800;
+  }
+  .ul1{
+      background-color: lavender;
+  }
+  .ul2{
+      background-color: lightgoldenrodyellow;
+  }
+
   .draggable {
     will-change: transform;
     font-family:  'Raleway',
@@ -70,8 +85,8 @@ span {
     margin: 10px auto;
     position: relative;
   }
-
-
-.over {
-  transform: scale(1.1, 1.1);
-}
+  .over{
+      margin-top: 15px;
+      opacity: 0.4;
+      background-color: lightgreen;
+  }
